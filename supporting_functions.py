@@ -33,7 +33,7 @@ def extract_video_id(url):
 
 def get_transcript(video_id, language):
     ytt_api = YouTubeTranscriptApi(
-        proxy_config=WebShareProxyConfig(
+        proxy_config=WebshareProxyConfig(
             proxy_username="dlovlvov",
             proxy_password="n340rtlw19d2"
         )
@@ -184,5 +184,6 @@ def rag_answer(question, vectorstore):
     response = chain.invoke({"context": context_text, 'question':question})
 
     return response.content
+
 
 
