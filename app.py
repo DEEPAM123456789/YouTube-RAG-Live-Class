@@ -96,3 +96,4 @@ if task_option=="Chat with Video" and "vector_store" in st.session_state:
         st.session_state.messages.append({'role':'assistant', 'content':response})
 
 
+
