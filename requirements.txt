@@ -21,3 +21,6 @@ rapidocr-onnxruntime
 requests
 openai
 tiktoken
+pysqlite3-binary
+
+
