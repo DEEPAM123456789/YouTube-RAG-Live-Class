@@ -5,7 +5,7 @@ import streamlit as st
 from dotenv import load_dotenv
 
 from youtube_transcript_api import YouTubeTranscriptApi
-from youtube_transcript_api.proxies import WebShareProxyConfig
+from youtube_transcript_api.proxies import WebshareProxyConfig
 from langchain_google_genai import ChatGoogleGenerativeAI
 
 from langchain_core.prompts import ChatPromptTemplate
@@ -41,7 +41,7 @@ def get_transcript(video_id, language):
     try:
         transcript = ytt_api.fetch(video_id, languages=[language])
         full_transcript = " ".join(i.text for i in transcript)
-        time.sleep(10)  # optional
+        time.sleep(40)  # optional
         return full_transcript
     except Exception as e:
         st.error(f"Error fetching video {e}")
@@ -184,4 +184,5 @@ def rag_answer(question, vectorstore):
     response = chain.invoke({"context": context_text, 'question':question})
 
     return response.content
+
 
