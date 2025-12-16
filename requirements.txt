@@ -22,5 +22,8 @@ requests
 openai
 tiktoken
 pysqlite3-binary
+langchain-text-splitters
+langchain-openai
+
 
 
