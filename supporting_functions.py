@@ -9,7 +9,7 @@ from youtube_transcript_api.proxies import WebshareProxyConfig
 from langchain_google_genai import ChatGoogleGenerativeAI
 
 from langchain_core.prompts import ChatPromptTemplate
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 from langchain.embeddings import OpenAIEmbeddings
 from langchain_chroma import Chroma
@@ -184,6 +184,7 @@ def rag_answer(question, vectorstore):
     response = chain.invoke({"context": context_text, 'question':question})
 
     return response.content
+
 
 
 
