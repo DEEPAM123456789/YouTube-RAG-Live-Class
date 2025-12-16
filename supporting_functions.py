@@ -11,7 +11,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
-from langchain.embeddings import OpenAIEmbeddings
+from langchain_openai import OpenAIEmbeddings
 from langchain_chroma import Chroma
 
 load_dotenv()
@@ -184,6 +184,7 @@ def rag_answer(question, vectorstore):
     response = chain.invoke({"context": context_text, 'question':question})
 
     return response.content
+
 
 
 
